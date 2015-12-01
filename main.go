@@ -56,8 +56,7 @@ func iter(kc *kinesis.Kinesis, shardIterator *string, maxItemSize int) error {
 		ShardIterator: shardIterator,
 	})
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "get records failed: %s", err)
-		os.Exit(1)
+		return err
 	}
 	for _, r := range records.Records {
 		fmt.Printf("ApproximateArrivalTimestamp: %v\n", r.ApproximateArrivalTimestamp)
