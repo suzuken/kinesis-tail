@@ -41,7 +41,7 @@ Continuously fetch records from Kinesis Stream and print it. Useful for debuggin
 ## How does it works:
 
 * At first, describe stream.
-* Get shart iterator.
+* Get shard iterator.
 * `GetRecords` iteratively.
 
 ## LICENSE
