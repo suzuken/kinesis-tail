@@ -60,7 +60,11 @@ func iter(kc *kinesis.Kinesis, shardIterator *string, maxItemSize int) error {
 	}
 	for _, r := range records.Records {
 		fmt.Printf("ApproximateArrivalTimestamp: %v\n", r.ApproximateArrivalTimestamp)
-		fmt.Printf("Data: %s\n", r.Data[:maxItemSize])
+		if len(r.Data) > maxItemSize {
+			fmt.Printf("Data: %s\n", r.Data[:maxItemSize-1])
+		} else {
+			fmt.Printf("Data: %s\n", r.Data[:])
+		}
 		fmt.Printf("SequenceNumber: %s\n", *r.SequenceNumber)
 	}
 	time.Sleep(time.Second * 3)
