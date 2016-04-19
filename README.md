@@ -38,6 +38,25 @@ Continuously fetch records from Kinesis Stream and print it. Useful for debuggin
 	Data: {"id":"0d669fb6-045e-4299-946c-5786037ab638","hoge":"fuga"}
 	...
 
+## Usage
+
+```
+Usage of kineis-tail:
+  -f    tailing kinesis stream forever or not (like: tail -f) (default true)
+  -interval duration
+        seconds for waiting next GetRecords request. (default 3s)
+  -iterator-type string
+        iterator type. Choose from TRIM_HORIZON(default), AT_SEQUENCE_NUMBER, or LATEST. (default "TRIM_HORIZON")
+  -limit int
+        limit records length of each GetRecords request. (default 100)
+  -max-item-size int
+        max byte size per item for printing. (default 4096)
+  -region string
+        the AWS region where your Kinesis Stream is. (default "ap-northeast-1")
+  -stream string
+        your stream name (default "your-stream")
+```
+
 ## How does it works:
 
 * At first, describe stream.
