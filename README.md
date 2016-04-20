@@ -46,13 +46,15 @@ Usage of kineis-tail:
   -interval duration
         seconds for waiting next GetRecords request. (default 3s)
   -iterator-type string
-        iterator type. Choose from TRIM_HORIZON(default), AT_SEQUENCE_NUMBER, or LATEST. (default "TRIM_HORIZON")
+        iterator type. Choose from TRIM_HORIZON(default), AT_SEQUENCE_NUMBER, AT_TIMESTAMP or LATEST. (default "TRIM_HORIZON")
   -limit int
         limit records length of each GetRecords request. (default 100)
   -max-item-size int
         max byte size per item for printing. (default 4096)
   -region string
         the AWS region where your Kinesis Stream is. (default "ap-northeast-1")
+  -start-time string
+        timestamp to start reading. only enable when iterator type is AT_TIMESTAMP. acceptable format is YYYY-MM-DDThh:mm:ss.sssTZD (RFC3339 format)
   -stream string
         your stream name (default "your-stream")
 ```
