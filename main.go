@@ -48,7 +48,7 @@ func main() {
 
 	streams, err := c.DescribeStream(&kinesis.DescribeStreamInput{StreamName: streamName})
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "cannot describe stream. please verify your stream is accecible.: %s", err)
+		fmt.Fprintf(os.Stderr, "cannot describe stream. please verify your stream is accessible.: %s", err)
 		os.Exit(1)
 	}
 	fmt.Printf("Your Stream information: %v\n", streams)
